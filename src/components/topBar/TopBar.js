@@ -1,5 +1,6 @@
 import Logo from '../logo/Logo'
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 const TopBarUl = styled.ul`
   display: flex;
@@ -13,7 +14,7 @@ const TopBarUl = styled.ul`
 `
 
 const TopBarLi = styled.li`
-  color: #FFFFFF;
+  color: #ffffff;
 `
 
 function TopBar() {
@@ -22,7 +23,9 @@ function TopBar() {
       <Logo />
       <TopBarUl>
         <TopBarLi>Accueil</TopBarLi>
-        <TopBarLi>Profil</TopBarLi>
+        <NavLink to="/profile">
+          <TopBarLi>Profil</TopBarLi>
+        </NavLink>
         <TopBarLi>Réglage</TopBarLi>
         <TopBarLi>Communauté</TopBarLi>
       </TopBarUl>
