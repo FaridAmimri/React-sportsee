@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts'
 
-function Weight() {
-  const [weightData, setWeightData] = useState([])
+function Activity() {
+  const [activityData, setWeightData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function Weight() {
         <BarChart
           width={700}
           height={300}
-          data={weightData}
+          data={activityData}
           margin={{top: 40, right: 0, left: 0, bottom: 5}}
         >
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -37,4 +37,4 @@ function Weight() {
   )
 }
 
-export default Weight
+export default Activity
