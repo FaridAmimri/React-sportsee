@@ -1,22 +1,23 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Nav from './components/nav/Nav'
+import Home from './pages/Home'
 import Profile from './pages/Profile'
 
+
 function App() {
-  const [mainData, setMainData] = useState([])
+  const [mainData, setData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     fetch('http://localhost:3000/user/18')
       .then((res) => res.json())
       .then((res) => {
-        setMainData(res.data)
+        setData(res.data)
         setIsLoading(false)
       })
   }, [])
 
-  console.log(mainData)
   return (
     <>
       <BrowserRouter>
@@ -24,6 +25,7 @@ function App() {
         {isLoading && <div>Loading...</div>}
         {!isLoading && (
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile data={mainData} />} />
           </Routes>
         )}

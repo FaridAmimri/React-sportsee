@@ -1,5 +1,8 @@
-import User from '../components/topBar/user/User'
+import User from '../components/user/User'
 import styled from 'styled-components'
+import Activity from '../components/activity/Activity'
+import Average from '../components/average/Average'
+import Performance from '../components/performance/Performance'
 
 const DashBoard = styled.div`
   width: 1126px;
@@ -9,11 +12,20 @@ const DashBoard = styled.div`
   margin-top: 20px;
 `
 
+const Statistic = styled.div`
+  margin-top: 30px;
+`
+
 function Profile(props) {
   return (
     <>
-      <DashBoard className="profile">
+      <DashBoard className="dashboard">
         <User user={props.data.userInfos} />
+        <Activity />
+        <Statistic className="statistic">
+          <Average />
+          <Performance />
+        </Statistic>
       </DashBoard>
     </>
   )

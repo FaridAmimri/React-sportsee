@@ -4,5 +4,25 @@ body {
   max-width: 1440px;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  // overflow-y: hidden;
 }
+
+/**** BarChart ****/
+.recharts-surface {
+  background-color: #FBFBFB;
+  border-radius: 5px;
+}
+ul.recharts-default-legend {
+  position: absolute;
+  top: -50px;
+  left: 72%;
+  margin: 0;
+}
+// .recharts-wrapper :nth-last-child(1) {
+//   background-color: #FBFBFB;
+// }
+
+/**** LineChart ****/
+// .recharts-wrapper :nth-last-child(2) {
+//   background-color: #FF0000;
+//   border-radius: 5px;
+// }

@@ -22,7 +22,9 @@ function TopBar() {
     <>
       <Logo />
       <TopBarUl>
-        <TopBarLi>Accueil</TopBarLi>
+        <NavLink to="/">
+          <TopBarLi>Accueil</TopBarLi>
+        </NavLink>
         <NavLink to="/profile">
           <TopBarLi>Profil</TopBarLi>
         </NavLink>
