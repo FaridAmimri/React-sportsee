@@ -15,7 +15,7 @@ const NavSide = styled.div`
   justify-content: center;
   justify-content: space-evenly;
   width: 117px;
-  min-height: 800px;
+  min-height: 900px;
   position: absolute;
   top: 90px;
   background-color: #020203;

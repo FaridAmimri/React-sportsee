@@ -8,8 +8,14 @@ body {
 
 /**** BarChart ****/
 .recharts-surface {
-  background-color: #FBFBFB;
+  background-color: #fbfbfb;
   border-radius: 5px;
+}
+.sc-crHmcD.hcejGt.legend-container {
+  background-color: #fbfbfb;
+  p {
+    background-color: #fbfbfb;
+  }
 }
 ul.recharts-default-legend {
   position: absolute;
@@ -17,12 +23,9 @@ ul.recharts-default-legend {
   left: 72%;
   margin: 0;
 }
-// .recharts-wrapper :nth-last-child(1) {
-//   background-color: #FBFBFB;
-// }
 
 /**** LineChart ****/
-// .recharts-wrapper :nth-last-child(2) {
-//   background-color: #FF0000;
-//   border-radius: 5px;
-// }
+.recharts-wrapper :nth-last-child(2) {
+  background-color: #ff0000;
+  border-radius: 5px;
+}

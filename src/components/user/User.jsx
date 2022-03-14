@@ -5,6 +5,7 @@ const Greetings = styled.h2`
   font-weight: bold;
   font-size: 48px;
   color: #000000;
+  margin: 0;
 `
 
 const FirstName = styled.span`
@@ -15,6 +16,7 @@ const Congratulations = styled.p`
   color: #000000;
   font-weight: bold;
   font-size: 18px;
+  margin-bottom: 70px;
 `
 
 function User({ user }) {

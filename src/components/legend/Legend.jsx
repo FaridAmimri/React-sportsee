@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const LegendContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  background-color: #FBFBFB;
   width: 90%;
   position: absolute;
   top: 1%;
@@ -22,10 +23,10 @@ function Legend() {
     <LegendContainer className="legend-container">
       <p style={{ fontSize: 15, color: '#20253A', fontWeight: 'bolder' }}>Activité quotidienne</p>
       <LegendContent className="legend-aside">
-        <p style={{ color: '#74798C' }}>
+        <p style={{ color: '#74798C', backgroundColor: '#FBFBFB' }}>
           <FaCircle style={{ color: '#282D30', fontSize: 8 }} /> Poids (kg)
         </p>
-        <p style={{ color: '#74798C' }}>
+        <p style={{ color: '#74798C', backgroundColor: '#FBFBFB' }}>
           <FaCircle style={{ color: '#E60000', fontSize: 8 }} /> Calories brûlées (kCal)
         </p>
       </LegendContent>

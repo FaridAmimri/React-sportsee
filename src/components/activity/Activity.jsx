@@ -68,7 +68,7 @@ function Activity() {
           width={700}
           height={300}
           data={activityData}
-          margin={{ top: 70, right: 50, left: 50, bottom: 30 }}
+          margin={{ top: 90, right: 50, left: 50, bottom: 30 }}
           barGap={7}
         >
           <CartesianGrid

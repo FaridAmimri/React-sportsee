@@ -9,7 +9,7 @@ const DashBoard = styled.div`
   height: 779px;
   position: absolute;
   left: 200px;
-  margin-top: 20px;
+  top: 130px;
 `
 
 const Statistic = styled.div`
