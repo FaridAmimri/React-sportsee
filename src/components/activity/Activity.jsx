@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import styled from 'styled-components'
 import { Model } from '../../models'
 import Legend from '../legend/Legend'
 import {
@@ -26,16 +27,38 @@ function Activity() {
   }
 
   function CustomTooltip({ active, payload }) {
+    const TooltipContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 39px;
+    height: 63px;
+    background-color: #E60000;
+    color: #FFFFFF;
+    font-size: 7px;
+    `
+
     if (active && payload && payload.length) {
       return (
-        <div className="custom-tooltip">
+        <TooltipContent className="tooltip-content">
           <p> {`${payload[0].value} kg`}</p>
           <p> {`${payload[1].value} kCal`}</p>
-        </div>
+        </TooltipContent>
       )
     }
     return null
   }
+
+  // function CustomHover({ points }) {
+  //   return (
+  //     <Rectangle
+  //       x={46.33}
+  //       y={20}
+  //     />
+  //   );
+  // }
 
   return (
     <>
@@ -45,7 +68,7 @@ function Activity() {
           width={700}
           height={300}
           data={activityData}
-          margin={{ top: 50, right: 50, left: 50, bottom: 30 }}
+          margin={{ top: 70, right: 50, left: 50, bottom: 30 }}
           barGap={7}
         >
           <CartesianGrid
@@ -72,12 +95,8 @@ function Activity() {
             tickSize="50"
           />
           <Tooltip
-            position={{ x: activityData.x + 50, y: activityData.y - 80 }}
             content={<CustomTooltip />}
-            cursor={{
-              fill: '#C4C4C4',
-              fillOpacity: '0.5',
-            }}
+            // cursor={<CustomHover />}
           />
           <Bar
             dataKey="kilogram"
