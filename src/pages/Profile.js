@@ -13,6 +13,7 @@ const DashBoard = styled.div`
 `
 
 const Statistic = styled.div`
+  display: flex;
   margin-top: 30px;
 `
 

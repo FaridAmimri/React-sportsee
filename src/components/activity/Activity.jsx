@@ -1,15 +1,22 @@
 import { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { Model } from '../../models'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import Legend from '../legend/Legend'
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-} from 'recharts'
+import { Model } from '../../models'
+import styled from 'styled-components'
+
+
+const TooltipContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 39px;
+  height: 63px;
+  background-color: #e60000;
+  color: #ffffff;
+  font-size: 7px;
+`
 
 function Activity() {
   const [activityData, setActivityData] = useState([])
@@ -27,19 +34,6 @@ function Activity() {
   }
 
   function CustomTooltip({ active, payload }) {
-    const TooltipContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    width: 39px;
-    height: 63px;
-    background-color: #E60000;
-    color: #FFFFFF;
-    font-size: 7px;
-    `
-
     if (active && payload && payload.length) {
       return (
         <TooltipContent className="tooltip-content">
@@ -50,15 +44,6 @@ function Activity() {
     }
     return null
   }
-
-  // function CustomHover({ points }) {
-  //   return (
-  //     <Rectangle
-  //       x={46.33}
-  //       y={20}
-  //     />
-  //   );
-  // }
 
   return (
     <>
@@ -84,20 +69,17 @@ function Activity() {
             padding={{ left: -47, right: -47 }}
             dy={12}
           />
-          <YAxis hide={true} yAxisId="left" />
           <YAxis
             axisLine={false}
             yAxisId="right"
             orientation="right"
             tickLine={false}
-            domain={['dataMin-1', 'dataMax+1']}
-            tickCount={4}
+            domain={['dataMin-1', 'dataMax']}
+            tickCount={3}
             tickSize="50"
           />
-          <Tooltip
-            content={<CustomTooltip />}
-            // cursor={<CustomHover />}
-          />
+          <YAxis hide={true} yAxisId="left" />
+          <Tooltip content={<CustomTooltip />} />
           <Bar
             dataKey="kilogram"
             barSize={7}

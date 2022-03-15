@@ -25,7 +25,20 @@ ul.recharts-default-legend {
 }
 
 /**** LineChart ****/
-.recharts-wrapper :nth-last-child(2) {
-  background-color: #ff0000;
-  border-radius: 5px;
+.statistic {
+  .recharts-wrapper :nth-last-child(2) {
+    background-color: #ff0000;
+    border-radius: 5px;
+  }
+}
+
+/**** RadarChart ****/
+.statistic {
+  .recharts-wrapper :nth-last-child(3) {
+    border-radius: 5px;
+  }
+  .recharts-surface {
+    background-color: #282d30;
+    border-radius: 5px;
+  }
 }

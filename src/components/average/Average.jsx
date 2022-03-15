@@ -1,18 +1,40 @@
 import { useEffect, useState } from 'react'
+import { Model } from '../../models'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import styled from 'styled-components'
+
+
+const TooltipContent = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 39px;
+    height: 25px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 8px;
+    font-weight: bold;
+  `
+  const TitleChart = styled.span`
+    position: absolute;
+    top: 530px;
+    left: 30px;
+    width: 147px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    z-index: 10;
+  `
 
 function Average() {
   const [averageData, setAverageData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost:3000/user/18/average-sessions')
-      .then((res) => res.json())
-      .then((res) => {
-        setAverageData(res.data.sessions)
-        setIsLoading(false)
-      })
+    Model.getUserAverage(18).then((res) => {
+      setAverageData(res.sessions)
+      setIsLoading(false)
+    })
   }, [])
 
   function formatXAxis(value) {
@@ -27,18 +49,6 @@ function Average() {
   }
 
   function CustomTooltip({ active, payload }) {
-    const TooltipContent = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    width: 39px;
-    height: 25px;
-    background-color: #FFFFFF;
-    color: #000000;
-    font-size: 8px;
-    font-weight: bold;
-    `
 
     if (active && payload && payload.length) {
       return (
@@ -49,16 +59,6 @@ function Average() {
     }
     return null
   }
-
-  const TitleChart = styled.span`
-    position: absolute;
-    top: 530px;
-    left: 30px;
-    width: 147px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 15px;
-    z-index: 10;
-  `
 
   return (
     <>
@@ -99,16 +99,23 @@ function Average() {
             domain={['dataMin-10', 'dataMax+40']}
             tickCount={0}
           />
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip
+            cursor={{
+              stroke: 'rgba(0, 0, 0, 0.1)',
+              strokeWidth: 79,
+            }}
+            content={<CustomTooltip />}
+          />
           <Line
             type="monotone"
             dataKey="sessionLength"
-            stroke="rgba(255, 255, 255, 0.6)" 
+            stroke="rgba(255, 255, 255, 0.6)"
             strokeWidth={2}
-            dot={true}
-            activeDot={{             
-              stroke: "#black",                             
-              r: 5, 
+            dot={false}
+            activeDot={{
+              stroke: 'rgba(255,255,255, 0.6)',
+              strokeWidth: 10,
+              r: 5,
             }}
           />
         </LineChart>
