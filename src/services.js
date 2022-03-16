@@ -1,4 +1,10 @@
 export const Service = {
+    getUserMainData: function(userId) {
+        return fetch(`http://localhost:3000/user/${userId}`)
+        .then((res) => res.json())
+        .then((result) => result.data)
+    },
+
     getUserActivity: function(userId) {
         return fetch(`http://localhost:3000/user/${userId}/activity`)
         .then((res) => res.json())

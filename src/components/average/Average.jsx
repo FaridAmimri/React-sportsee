@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Model } from '../../models'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import styled from 'styled-components'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 
 
 const TooltipContent = styled.div`
@@ -18,7 +18,7 @@ const TooltipContent = styled.div`
   `
   const TitleChart = styled.span`
     position: absolute;
-    top: 530px;
+    top: 30px;
     left: 30px;
     width: 147px;
     color: rgba(255, 255, 255, 0.7);
@@ -61,7 +61,7 @@ function Average() {
   }
 
   return (
-    <>
+    <div className='average'>
       <TitleChart>Durée moyenne des sessions</TitleChart>
       {isLoading && <div>...Loading</div>}
       {!isLoading && (
@@ -120,7 +120,7 @@ function Average() {
           />
         </LineChart>
       )}
-    </>
+    </div>
   )
 }
 

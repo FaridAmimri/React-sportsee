@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Model } from '../../models'
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts'
 
+
 function Performance() {
   const [performanceData, setPerformanceData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
@@ -24,7 +25,7 @@ function Performance() {
   }
 
   return (
-    <>
+    <div className='performance'>
       {isLoading && <div>...Loading</div>}
       {!isLoading && (
         <RadarChart
@@ -52,7 +53,7 @@ function Performance() {
           />
         </RadarChart>
       )}
-    </>
+    </div>
   )
 }
 

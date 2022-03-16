@@ -46,11 +46,11 @@ function Activity() {
   }
 
   return (
-    <>
+    <div className='activity'>
       {isLoading && <div>...Loading</div>}
       {!isLoading && (
         <BarChart
-          width={700}
+          width={810}
           height={300}
           data={activityData}
           margin={{ top: 90, right: 50, left: 50, bottom: 30 }}
@@ -99,7 +99,7 @@ function Activity() {
           <Legend />
         </BarChart>
       )}
-    </>
+    </div>
   )
 }
 

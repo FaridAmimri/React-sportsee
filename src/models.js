@@ -1,6 +1,15 @@
 import { Service } from './services'
 
 export const Model = {
+    getUserMainData: function(userId) {
+        return Service.getUserMainData(userId)
+        .then((data) => {
+            return {
+                score: data.score,
+            }
+        })
+    },
+    
     getUserActivity: function(userId) {
         return Service.getUserActivity(userId)
         .then((data) => {

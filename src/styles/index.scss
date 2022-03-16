@@ -6,17 +6,25 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-/**** BarChart ****/
+/***************************** Profile Page *****************************/
+
 .recharts-surface {
-  background-color: #fbfbfb;
   border-radius: 5px;
 }
-.sc-crHmcD.hcejGt.legend-container {
-  background-color: #fbfbfb;
-  p {
+
+/**** BarChart ****/
+.activity {
+  .recharts-surface {
     background-color: #fbfbfb;
   }
+  .legend-container {
+    background-color: #fbfbfb;
+    p {
+      background-color: #fbfbfb;
+    }
+  }
 }
+
 ul.recharts-default-legend {
   position: absolute;
   top: -50px;
@@ -25,20 +33,24 @@ ul.recharts-default-legend {
 }
 
 /**** LineChart ****/
-.statistic {
-  .recharts-wrapper :nth-last-child(2) {
-    background-color: #ff0000;
-    border-radius: 5px;
+.average {
+  position: relative;
+  .recharts-surface {
+    background-color: #FF0000;
   }
 }
 
 /**** RadarChart ****/
-.statistic {
-  .recharts-wrapper :nth-last-child(3) {
-    border-radius: 5px;
-  }
+.performance {
   .recharts-surface {
-    background-color: #282d30;
-    border-radius: 5px;
+    background-color: #282D30;
+  }
+}
+
+/**** PieChart ****/
+.score {
+  position: relative;
+  .recharts-surface {
+    background-color: #FBFBFB;
   }
 }
