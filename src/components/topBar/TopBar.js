@@ -6,7 +6,7 @@ const TopBarUl = styled.ul`
   display: flex;
   justify-content: space-evenly;
   align-self: center;
-  width: 80%;
+  width: 85%;
   padding: 0;
   list-style-type: none;
   font-size: 24px;

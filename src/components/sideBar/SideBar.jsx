@@ -1,19 +1,23 @@
 import styled from 'styled-components'
-import IconRelax from './iconRelax.png'
-import IconSwim from './iconSwim.png'
-import IconBike from './iconBike.png'
-import IconTraining from './iconTraining.png'
+import yoga from './yoga.png'
+import swim from './swim.png'
+import bike from './bike.png'
+import weight from './weight.png'
 
 const SideBarDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: absolute;
+  top: 220px;
   padding: 0;
   height: 316px;
   align-self: center;
 `
 
 const SideBarSpan = styled.span`
+  position: absolute;
+  top: 700px;
   color: #ffffff;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -26,10 +30,10 @@ function SideBar() {
   return (
     <>
       <SideBarDiv>
-        <img src={IconRelax} alt="icon-relaxation" />
-        <img src={IconSwim} alt="icon-swimming" />
-        <img src={IconBike} alt="icon-cycling" />
-        <img src={IconTraining} alt="icon-bodybuilding" />
+        <img src={yoga} alt="icon-yoga" />
+        <img src={swim} alt="icon-swimming" />
+        <img src={bike} alt="icon-cycling" />
+        <img src={weight} alt="icon-bodybuilding" />
       </SideBarDiv>
       <SideBarSpan>Copiryght, SportSee 2022</SideBarSpan>
     </>

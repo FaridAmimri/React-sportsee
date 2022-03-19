@@ -6,7 +6,7 @@ import Profile from './pages/Profile'
 
 
 function App() {
-  const [mainData, setData] = useState([])
+  const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
         {!isLoading && (
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile data={mainData} />} />
+            <Route path="/profile" element={<Profile data={data} />} />
           </Routes>
         )}
       </BrowserRouter>

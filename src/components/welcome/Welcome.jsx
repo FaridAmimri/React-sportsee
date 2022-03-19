@@ -21,14 +21,14 @@ const Congratulations = styled.p`
 
 function Welcome({ user }) {
   return (
-    <header>
+    <div className='welcome'>
       <Greetings>
         Bonjour <FirstName>{user.firstName}</FirstName>
       </Greetings>
       <Congratulations>
         Félicitations ! Vous avez explosé vos objectifs hier 👏
       </Congratulations>
-    </header>
+    </div>
   )
 }
 

@@ -14,21 +14,38 @@ const TitleChart = styled.span`
   z-index: 10;
 `
 
-const ScoreChart = styled.div`
+const ScoreContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 61px;
-  left: 58px;
+  top: 64px;
+  left: 61px;
   width: 159px;
   height: 159px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 100%;
-  color: #20253A;
+  color: #20253a;
   z-index: 10;
+`
+
+const ScoreResult = styled.p`
   font-size: 26px;
   font-weight: bold;
+  color: #282d30;
+  margin: 0;
+`
+
+const ScoreContent = styled.p`
+  width: 95px;
+  height: 56px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #74798c;
+  margin: 0;
+  text-align: center;
+  line-height: 25px;
 `
 
 function Score() {
@@ -54,9 +71,12 @@ function Score() {
   ]
 
   return (
-    <div className='score'>
+    <div className="score">
       <TitleChart>Score</TitleChart>
-      <ScoreChart>{ScoreData.score * 100} %</ScoreChart>
+      <ScoreContainer>
+        <ScoreResult>{ScoreData.score * 100} %</ScoreResult>
+        <ScoreContent>de votre objectif</ScoreContent>
+      </ScoreContainer>
       {isLoading && <div>...Loading</div>}
       {!isLoading && (
         <PieChart width={258} height={263}>

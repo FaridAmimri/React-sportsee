@@ -5,7 +5,7 @@ import SideBar from '../sideBar/SideBar'
 const NavTop = styled.div`
   display: flex;
   height: 91px;
-  min-width: 1024px;
+  min-width: 1440px;
   background-color: #020203;
 `
 
@@ -13,9 +13,8 @@ const NavSide = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  justify-content: space-evenly;
   width: 117px;
-  min-height: 900px;
+  min-height: 880px;
   position: absolute;
   top: 90px;
   background-color: #020203;

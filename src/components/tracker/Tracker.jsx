@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-
 const TrackerContainer = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
   width: 258px;
   height: 124px;
   background-color: #fbfbfb;
@@ -25,19 +25,19 @@ const TrackerCount = styled.div`
 const TrackerValue = styled.span`
   font-size: 20px;
   font-weight: bold;
-  color: #282D30;
+  color: #282d30;
 `
 
 const TrackerUnity = styled.span`
   font-size: 14px;
   font-weight: 600;
-  color: #74798C;
+  color: #74798c;
 `
 
-function Tracker({ children, unity }) {
+function Tracker({ image, children, unity }) {
   return (
     <TrackerContainer>
-      <TrackerImg></TrackerImg>
+      <TrackerImg>{image}</TrackerImg>
       <TrackerCount>
         <TrackerValue>{children}</TrackerValue>
         <TrackerUnity>{unity}</TrackerUnity>
