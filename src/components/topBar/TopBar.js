@@ -25,7 +25,7 @@ function TopBar() {
         <NavLink to="/">
           <TopBarLi>Accueil</TopBarLi>
         </NavLink>
-        <NavLink to="/profile">
+        <NavLink to="/user">
           <TopBarLi>Profil</TopBarLi>
         </NavLink>
         <TopBarLi>Réglage</TopBarLi>
