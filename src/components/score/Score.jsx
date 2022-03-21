@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { Model } from '../../models'
 import styled from 'styled-components'
 import { PieChart, Pie, Cell } from 'recharts'
@@ -51,9 +52,10 @@ const ScoreContent = styled.p`
 function Score() {
   const [ScoreData, setScoreData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const {id} = useParams()
 
   useEffect(() => {
-    Model.getUserMainData(18).then((res) => {
+    Model.getUserMainData(id).then((res) => {
       setScoreData(res)
       setIsLoading(false)
     })

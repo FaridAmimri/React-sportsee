@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { Model } from '../../models'
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts'
 
@@ -6,9 +7,10 @@ import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts'
 function Performance() {
   const [performanceData, setPerformanceData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const {id} = useParams()
 
   useEffect(() => {
-    Model.getUserPerformance(18).then((res) => {
+    Model.getUserPerformance(id).then((res) => {
       setPerformanceData(res.data)
       setIsLoading(false)
     })

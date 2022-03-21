@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { Model } from '../../models'
 import styled from 'styled-components'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
@@ -29,9 +30,10 @@ const TooltipContent = styled.div`
 function Average() {
   const [averageData, setAverageData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const {id} = useParams()
 
   useEffect(() => {
-    Model.getUserAverage(18).then((res) => {
+    Model.getUserAverage(id).then((res) => {
       setAverageData(res.sessions)
       setIsLoading(false)
     })

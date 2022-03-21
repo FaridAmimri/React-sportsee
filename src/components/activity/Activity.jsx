@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { Model } from '../../models'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import Legend from '../legend/Legend'
-import { Model } from '../../models'
 import styled from 'styled-components'
 
 
@@ -21,9 +22,10 @@ const TooltipContent = styled.div`
 function Activity() {
   const [activityData, setActivityData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const {id} = useParams()
 
   useEffect(() => {
-    Model.getUserActivity(18).then((res) => {
+    Model.getUserActivity(id).then((res) => {
       setActivityData(res.sessions)
       setIsLoading(false)
     })
