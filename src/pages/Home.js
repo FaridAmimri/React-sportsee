@@ -1,13 +1,9 @@
-import styled from 'styled-components'
+/**
+ * @function creating home page with 2 links for User 12 and User 18
+ */
 
-const HomePage = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 1126px;
-  height: 800px;
-  position: absolute;
-  left: 117px;
-`
+import { NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 
 const Button = styled.button`
   width: 200px;
@@ -33,10 +29,14 @@ const Button = styled.button`
 
 function Home() {
   return (
-    <HomePage>
-      <Button>USER 12</Button>
-      <Button>USER 18</Button>
-    </HomePage>
+    <main>
+      <NavLink to={`user/12`}>
+        <Button>USER 12</Button>
+      </NavLink>
+      <NavLink to={`user/18`}>
+        <Button>USER 18</Button>
+      </NavLink>
+    </main>
   )
 }
 
