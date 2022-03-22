@@ -1,43 +1,44 @@
 import { Service } from './services'
+import { mockService } from './mockService'
+
+const selectedService = process.env.REACT_APP_ACTIVE_MOCK === 'true' ? mockService : Service
 
 export const Model = {
-    getUserMainData: function(userId) {
-        return Service.getUserMainData(userId)
-        .then((data) => {
-            return {
-                score: data.score,
-            }
-        })
-    },
-    
-    getUserActivity: function(userId) {
-        return Service.getUserActivity(userId)
-        .then((data) => {
-            return {
-                userId: data.userId,
-                sessions: data.sessions,
-            }
-        })
-    },
+  getUserMainData: function (userId) {
+    return selectedService.getUserMainData(userId).then((data) => {
+      return {
+        userInfos: data.userInfos,
+        score: data.score || data.todayScore,
+        keyData: data.keyData,
+      }
+    })
+  },
 
-    getUserAverage: function(userId) {
-        return Service.getUserAverage(userId)
-        .then((data) => {
-            return {
-                userId: data.userId,
-                sessions: data.sessions,
-            }
-        })
-    },
+  getUserActivity: function (userId) {
+    return selectedService.getUserActivity(userId).then((data) => {
+      return {
+        userId: data.userId,
+        sessions: data.sessions,
+      }
+    })
+  },
 
-    getUserPerformance: function(userId) {
-        return Service.getUserPerformance(userId)
-        .then((data) => {
-            return {
-                userId: data.userId,
-                kind: data.kind,
-                data : data.data,
-            }
-        })
-    }
+  getUserAverage: function (userId) {
+    return selectedService.getUserAverage(userId).then((data) => {
+      return {
+        userId: data.userId,
+        sessions: data.sessions,
+      }
+    })
+  },
+
+  getUserPerformance: function (userId) {
+    return selectedService.getUserPerformance(userId).then((data) => {
+      return {
+        userId: data.userId,
+        kind: data.kind,
+        data: data.data,
+      }
+    })
+  },
 }
