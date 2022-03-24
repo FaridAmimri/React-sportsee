@@ -1,14 +1,25 @@
 /**
- * Rendering component Navtop
+ * Rendering component Navigation
  * @returns Navigation bar with link in order to choose a user
  * @link is used to navigate between differents pages
  */
 
-import Logo from '../logo/Logo'
+import Logo from './assets/logo.png'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
-const TopBarUl = styled.ul`
+const LogoContainer = styled.div`
+  display: flex;
+  align-self: center;
+  padding-left: 32px;
+`
+
+const LogoImg = styled.img`
+  width: 178px;
+  height: 60px;
+`
+
+const NavUl = styled.ul`
   display: flex;
   justify-content: space-evenly;
   align-self: center;
@@ -22,28 +33,28 @@ const TopBarUl = styled.ul`
   }
 `
 
-const TopBarLi = styled.li`
+const NavLi = styled.li`
   color: #ffffff;
 `
 
 function Navigation() {
   return (
     <header>
-      <Logo />
-      <TopBarUl>
+      <LogoContainer>
+        <LogoImg src={Logo} alt="logo-sportsee" />
+      </LogoContainer>
+      <NavUl>
         <NavLink to="/">
-          <TopBarLi>Accueil</TopBarLi>
+          <NavLi>Accueil</NavLi>
         </NavLink>
         <NavLink to="/user/12">
-          <TopBarLi>Profil</TopBarLi>
+          <NavLi>Profil</NavLi>
         </NavLink>
-        <TopBarLi>Réglage</TopBarLi>
-        <TopBarLi>Communauté</TopBarLi>
-      </TopBarUl>
+        <NavLi>Réglage</NavLi>
+        <NavLi>Communauté</NavLi>
+      </NavUl>
     </header>
   )
 }
 
 export default Navigation
-
-
