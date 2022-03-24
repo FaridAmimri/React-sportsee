@@ -1,5 +1,5 @@
 /**
- * @function creating profile page with 2 links for User 12 and User 18
+ * @function creating profile page with 2 links for Users
  */
 
 import Welcome from '../components/welcome/Welcome'
@@ -12,9 +12,9 @@ import Nutrients from '../components/nutrients/Nutrients'
 function Profile() {
   return (
     <main>
-      <header>
+      <div>
         <Welcome />
-      </header>
+      </div>
 
       <section>
         <article>
@@ -24,9 +24,9 @@ function Profile() {
           <Score />
         </article>
 
-        <aside>
+        <div>
           <Nutrients />
-        </aside>
+        </div>
       </section>
     </main>
   )
