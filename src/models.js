@@ -1,3 +1,10 @@
+/**
+ * Model dispatching API Calls
+ * @function - Able to switch between local data or API
+ * @param {number} userId - Id of the user.
+ * @return {object} - Using promise returning data in JSON formated Object
+ */
+
 import { Service } from './services'
 import { mockService } from './mockService'
 
