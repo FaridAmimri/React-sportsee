@@ -9,6 +9,24 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+header {
+  display: flex;
+  height: 91px;
+  min-width: 1440px;
+  background-color: #020203;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 117px;
+  min-height: 880px;
+  position: absolute;
+  top: 90px;
+  background-color: #020203;
+}
+
 main {
   width: 1126px;
   height: 779px;
@@ -24,13 +42,13 @@ section {
   justify-content: space-between;
   width: 108%;
   margin-top: 30px;
+  article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 810px;
+    height: 600px;
+  }
 }
 
-article {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-  width: 810px;
-  height: 600px;
-}
