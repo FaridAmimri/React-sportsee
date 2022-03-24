@@ -1,3 +1,10 @@
+/**
+ * mockService returning data in local by promise
+ * @function - Dispatching data for components
+ * @param {number} userId - Id of the user
+ * @return {object} - Using promise returning data object for components
+ */
+
 export const mockService = {
   getUserMainData: function (userId) {
     return new Promise((resolve) => {
