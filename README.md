@@ -1,70 +1,97 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# SportSee
 
-## Available Scripts
+Dashbord SportSee project.
+This project works with the API provided by openclassrooms.
 
-In the project directory, you can run:
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Client:** React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**IDE:** Visual Studio Code
 
-### `npm test`
+**Server:** NodeJs
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Terminal:** Npm or Yarn
 
-### `npm run build`
+## Deployment
+**Back-end**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To deploy this project, first fork
+the API :
+https://github.com/FaridAmimri/Sportsee-api
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the back-end project locally : 
+```bash
+git clone https://github.com/FaridAmimri/Sportsee-api.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Go to the project directory :
+```bash
+cd Sportsee-api
+```
 
-### `npm run eject`
+Install dependencies 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In your terminal run the back-end using yarn or npm command (for ex) :
+```bash
+npm start
+```
+You API should be running on port 3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Run Locally
+**Front-end**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Clone the front-end project locally :
 
-## Learn More
+```bash
+git clone https://github.com/FaridAmimri/React-sportsee.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Go to the project directory
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+cd React-sportsee
+```
 
-### Code Splitting
+Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm install
+```
 
-### Analyzing the Bundle Size
+Start the server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm start
+```
 
-### Making a Progressive Web App
+You front-end project should be running on another port instead which is 3001.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Environment Variables
 
-### Advanced Configuration
+in the .env file, you should be able to switch bewtween the following environment variables.
+To switch from one to another, just change REACT_APP_ACTIVE_MOCK to false or true.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+`mockService` running on local mocked data
 
-### Deployment
+`Service` running on Api
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[@FaridAmimri](https://github.com/FaridAmimri)
+
+
+## 🛠 Skills
+Javascript, HTML, CSS...
+
+
+## 🚀 About Me
+I'm a React Junior Developer...
+
