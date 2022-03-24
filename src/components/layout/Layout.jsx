@@ -1,3 +1,8 @@
+/**
+ * Rendering component Layout
+ * @returns Layout vertical with png illustrations
+ */
+
 import yoga from './assets/yoga.png'
 import swim from './assets/swim.png'
 import bike from './assets/bike.png'
@@ -35,11 +40,9 @@ function Layout() {
         <img src={bike} alt="icon-cycling" />
         <img src={weight} alt="icon-bodybuilding" />
       </LayoutIcon>
-      <LayoutContent>Copiryght, SportSee 2022</LayoutContent>
+      <LayoutContent>Copyright, SportSee 2022</LayoutContent>
     </aside>
   )
 }
 
 export default Layout
-
-
