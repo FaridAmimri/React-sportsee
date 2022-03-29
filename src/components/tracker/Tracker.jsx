@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const TrackerContainer = styled.div`
   display: flex;
@@ -24,20 +25,26 @@ const TrackerCount = styled.div`
 
 const TrackerValue = styled.span`
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
   color: #282d30;
 `
 
 const TrackerUnity = styled.span`
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: #74798c;
 `
+
+Tracker.propTypes = {
+  image: PropTypes.string,
+  children: PropTypes.object,
+  unity: PropTypes.string,
+}
 
 function Tracker({ image, children, unity }) {
   return (
     <TrackerContainer>
-      <TrackerImg>{image}</TrackerImg>
+      <TrackerImg src={image} />
       <TrackerCount>
         <TrackerValue>{children}</TrackerValue>
         <TrackerUnity>{unity}</TrackerUnity>

@@ -1,26 +1,10 @@
-import styled from 'styled-components'
 import Tracker from '../tracker/Tracker'
-
-const icons = [
-  {
-    index: 0,
-    iconCalories: './calorie.png',
-  },
-  {
-    index: 1,
-    iconProtein: './protein.png',
-  },
-  {
-    index: 2,
-    iconCarbs: './carbs.png',
-  },
-  {
-    index: 3,
-    iconFat: './fat.png',
-  },
-]
-
-console.log(icons[0].iconCalories)
+import CalorieIcon from './assets/calories.png'
+import ProteinIcon from './assets/protein.png'
+import CarbsIcon from './assets/carbs.png'
+import FatIcon from './assets/fat.png'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const NutrientsContainer = styled.div`
   display: flex;
@@ -30,25 +14,31 @@ const NutrientsContainer = styled.div`
   height: 600px;
 `
 
-function Nutrients({ count }) {
+Nutrients.propTypes = {
+  nutrientsData: PropTypes.object,
+}
+
+function Nutrients({ nutrientsData }) {
+
   return (
-    <NutrientsContainer>
-      <Tracker unity="Calories">
-        {/* <TrackerImg src={calorie} alt='icon-calories'></TrackerImg> */}
-        {<span>{count.calorieCount} kCal</span>}
+    <NutrientsContainer className="nutrients">
+      <Tracker unity="Calories" image={CalorieIcon}>
+        {<span>{nutrientsData.calorieCount} kCal</span>}
       </Tracker>
 
-      <Tracker unity="Proteines">{<span>{count.proteinCount} g</span>}</Tracker>
-
-      <Tracker unity="Glucides">
-        {<span>{count.carbohydrateCount} g</span>}
+      <Tracker unity="Proteines" image={ProteinIcon}>
+        {<span>{nutrientsData.proteinCount} g</span>}
       </Tracker>
 
-      <Tracker unity="Lipides">{<span>{count.lipidCount} g</span>}</Tracker>
+      <Tracker unity="Glucides" image={CarbsIcon}>
+        {<span>{nutrientsData.carbohydrateCount} g</span>}
+      </Tracker>
+
+      <Tracker unity="Lipides" image={FatIcon}>
+        {<span>{nutrientsData.lipidCount} g</span>}
+      </Tracker>
     </NutrientsContainer>
   )
 }
 
 export default Nutrients
-
-// image={icons[0].iconCalories}

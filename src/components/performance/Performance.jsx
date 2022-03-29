@@ -1,20 +1,19 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { Model } from '../../models'
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
+const RadarChartContainer = styled.div`
+  .recharts-surface {
+    background-color: #282d30;
+    border-radius: 5px;
+  }
+`
 
-function Performance() {
-  const [performanceData, setPerformanceData] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const {id} = useParams()
+Performance.propTypes = {
+  performanceData: PropTypes.array,
+}
 
-  useEffect(() => {
-    Model.getUserPerformance(id).then((res) => {
-      setPerformanceData(res.data)
-      setIsLoading(false)
-    })
-  }, [])
+function Performance({ performanceData }) {
 
   function formatAngleAxis(value) {
     if (value === 1) return 'Intensité'
@@ -27,58 +26,33 @@ function Performance() {
   }
 
   return (
-    <div className='performance'>
-      {isLoading && <div>...Loading</div>}
-      {!isLoading && (
-        <RadarChart
-          outerRadius={90}
-          width={258}
-          height={263}
-          data={performanceData}
-        >
-          <PolarGrid radialLines={false} />
-          <PolarAngleAxis
-            dataKey="kind"
-            stroke="#FFFFFF"
-            tickLine={false}
-            tickFormatter={formatAngleAxis}
-            tick={{
-              fontSize: 10,
-              fontWeight: 900,
-            }}
-          />
-          <Radar
-            dataKey="value"
-            fill="#FF0101"
-            stroke="transparent"
-            fillOpacity={0.7}
-          />
-        </RadarChart>
-      )}
-    </div>
+    <RadarChartContainer className="performance">
+      <RadarChart
+        outerRadius={90}
+        width={258}
+        height={263}
+        data={performanceData}
+      >
+        <PolarGrid radialLines={false} />
+        <PolarAngleAxis
+          dataKey="kind"
+          stroke="#FFFFFF"
+          tickLine={false}
+          tickFormatter={formatAngleAxis}
+          tick={{
+            fontSize: 10,
+            fontWeight: 500,
+          }}
+        />
+        <Radar
+          dataKey="value"
+          fill="#FF0101"
+          stroke="transparent"
+          fillOpacity={0.7}
+        />
+      </RadarChart>
+    </RadarChartContainer>
   )
 }
 
 export default Performance
-
-// {isLoading && <div>...Loading</div>}
-//       {!isLoading && (
-//         <RadarChart cx="50%" cy="50%" outerRadius="80%" data={performanceData}>
-//           <PolarGrid radialLines={false} />
-//           <PolarAngleAxis
-//             dataKey='kind'
-//             stroke="white"
-//             tickLine={false}
-//             tick={{
-//               fontSize: 10,
-//               fontWeight: 500,
-//             }}
-//           />
-//           <Radar
-//             dataKey='value'
-//             fill="#ff0101"
-//             stroke="transparent"
-//             fillOpacity={0.7}
-//           />
-//         </RadarChart>
-//       )}
