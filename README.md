@@ -5,13 +5,13 @@ Dashbord SportSee project.
 This project works with the API provided by openclassrooms.
 
 
-## Tech Stack
+## Dependencies
 
 **Client:** React
 
 **IDE:** Visual Studio Code
 
-**Server:** NodeJs
+**Server:** NodeJs Version 14.16.1
 
 **Terminal:** Npm or Yarn
 
@@ -73,7 +73,7 @@ npm start
 
 You front-end project should be running on another port instead which is 3001.
 
-## Environment Variables
+## Switching to mockService
 
 in the .env file, you should be able to switch bewtween the following environment variables.
 To switch from one to another, just change REACT_APP_ACTIVE_MOCK to false or true.
