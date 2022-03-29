@@ -1,16 +1,13 @@
-/**
- * Model dispatching API Calls
- * @function - Able to switch between local data or API
- * @param {number} userId - Id of the user.
- * @return {object} - Using promise returning data in JSON formated Object
- */
-
 import { Service } from './services'
 import { mockService } from './mockService'
 
 const selectedService = process.env.REACT_APP_ACTIVE_MOCK === 'true' ? mockService : Service
 
 export const Model = {
+  /**
+   * @param {Number} userId - Id of the user.
+   * @return {Promise} - Using promise returning data in JSON formated Object
+   */
   getUserMainData: function (userId) {
     return selectedService.getUserMainData(userId).then((data) => {
       return {
