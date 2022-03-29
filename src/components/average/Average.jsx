@@ -2,6 +2,14 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+const LineChartContainer = styled.div`
+  position: relative;
+  .recharts-surface {
+    background-color: #ff0000;
+    border-radius: 5px;
+  }
+`
+
 const TitleChart = styled.span`
   position: absolute;
   top: 30px;
@@ -12,14 +20,6 @@ const TitleChart = styled.span`
   font-size: 15px;
   font-weight: 500;
   z-index: 10;
-`
-
-const LineChartContainer = styled.div`
-  position: relative;
-  .recharts-surface {
-    background-color: #ff0000;
-    border-radius: 5px;
-  }
 `
 
 const TooltipContent = styled.div`
@@ -63,7 +63,7 @@ function Average({ averageData }) {
     if (active && payload && payload.length) {
       return (
         <TooltipContent className="tooltip-content">
-          <bold>{`${payload[0].value} min`}</bold>
+          <span>{`${payload[0].value} min`}</span>
         </TooltipContent>
       )
     }
