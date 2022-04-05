@@ -18,6 +18,10 @@ export const Model = {
     })
   },
 
+  /**
+   * @param {Number} userId - Id of the user.
+   * @return {Promise} - Using promise returning data in JSON formated Object
+   */
   getUserActivity: function (userId) {
     return selectedService.getUserActivity(userId).then((data) => {
       return {
@@ -27,6 +31,10 @@ export const Model = {
     })
   },
 
+  /**
+   * @param {Number} userId - Id of the user.
+   * @return {Promise} - Using promise returning data in JSON formated Object
+   */
   getUserAverage: function (userId) {
     return selectedService.getUserAverage(userId).then((data) => {
       return {
@@ -36,6 +44,10 @@ export const Model = {
     })
   },
 
+  /**
+   * @param {Number} userId - Id of the user.
+   * @return {Promise} - Using promise returning data in JSON formated Object
+   */
   getUserPerformance: function (userId) {
     return selectedService.getUserPerformance(userId).then((data) => {
       return {

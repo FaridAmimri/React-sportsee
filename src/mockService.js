@@ -40,6 +40,10 @@ export const mockService = {
     })
   },
 
+  /**
+   * @param {number} userId - Id of the user.
+   * @return {Promise} - Using promise returning data in JSON formated Object
+   */
   getUserActivity: function (userId) {
     return new Promise((resolve) => {
       resolve(
@@ -127,6 +131,10 @@ export const mockService = {
     })
   },
 
+  /**
+   * @param {number} userId - Id of the user.
+   * @return {Promise} - Using promise returning data in JSON formated Object
+   */
   getUserAverage: function (userId) {
     return new Promise((resolve) => {
       resolve(
@@ -199,7 +207,11 @@ export const mockService = {
       )
     })
   },
-
+  
+  /**
+   * @param {number} userId - Id of the user.
+   * @return {Promise} - Using promise returning data in JSON formated Object
+   */
   getUserPerformance: function (userId) {
     return new Promise((resolve) => {
       resolve(
