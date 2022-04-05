@@ -207,7 +207,7 @@ export const mockService = {
       )
     })
   },
-  
+
   /**
    * @param {number} userId - Id of the user.
    * @return {Promise} - Using promise returning data in JSON formated Object
