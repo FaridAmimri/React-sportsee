@@ -42,7 +42,7 @@ Average.propTypes = {
 function Average({ averageData }) {
   /**
    * @param {number} value
-   * @returns {string} corresponding to first letter of weekdays
+   * @return {string} corresponding to first letter of weekdays
    */
   function formatXAxis(value) {
     if (value === 1) return 'L'
@@ -68,6 +68,20 @@ function Average({ averageData }) {
       )
     }
     return null
+  }
+
+  /**
+   * @param {number} value
+   * @return {svg} corresponding to circle and rectangle with inline style
+   */
+  function CustomActiveDot({ cx, cy }) {
+    return (
+      <svg>
+        <circle cx={cx} cy={cy} r={10} stroke="#FFFFFFF" fill="#FFFFFF75" />
+        <circle cx={cx} cy={cy} r={4} stroke="white" fill="white" />
+        <rect x={cx} y={0} width="258" height="263" fill="#00000015" />
+      </svg>
+    )
   }
 
   return (
@@ -108,24 +122,15 @@ function Average({ averageData }) {
           domain={['dataMin-10', 'dataMax+40']}
           tickCount={0}
         />
-        <Tooltip
-          cursor={{
-            stroke: 'rgba(0, 0, 0, 0.1)',
-            strokeWidth: 79,
-          }}
-          content={<CustomTooltip />}
-        />
+        <Tooltip content={<CustomTooltip />} />
+
         <Line
           type="monotone"
           dataKey="sessionLength"
           stroke="rgba(255, 255, 255, 0.6)"
           strokeWidth={2}
           dot={false}
-          activeDot={{
-            stroke: 'rgba(255,255,255, 0.6)',
-            strokeWidth: 10,
-            r: 5,
-          }}
+          activeDot={<CustomActiveDot />}
         />
       </LineChart>
     </LineChartContainer>
