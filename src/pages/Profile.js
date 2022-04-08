@@ -47,7 +47,7 @@ function Profile() {
   return (
     <>
       {isLoading && <div>...is loading</div>}
-      {!isLoading && (
+      {!isLoading && performanceData.length > 0 && (
         <main>
           <div>
             <Welcome />
